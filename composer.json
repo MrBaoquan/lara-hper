@@ -1,0 +1,35 @@
+{
+    "name": "mrbaoquan/lara-hper",
+    "description": "quick start laravel project",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mrbaoquan",
+            "email": "mrma617@gmail.com"
+        }
+    ],
+    "require": {
+        "encore/laravel-admin": "1.*",
+        "iidestiny/laravel-filesystem-oss": "^2.1",
+        "laravel/horizon": "^5.7",
+        "laravel/sanctum": "^2.9",
+        "laravel/telescope": "^4.4",
+        "overtrue/laravel-wechat": "^6.0",
+        "spatie/laravel-backup": "^6.14",
+        "overtrue/laravel-lang": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mrba\\LaraHper\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mrba\\LaraHper\\LaraHperServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}
