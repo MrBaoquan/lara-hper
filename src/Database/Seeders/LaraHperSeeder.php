@@ -5,7 +5,7 @@ namespace Mrba\LaraHper\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class LaraStartSeeder extends Seeder
+class LaraHperSeeder extends Seeder
 {
     /**
      * Run the database seeds.

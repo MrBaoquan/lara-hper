@@ -7,12 +7,14 @@ use Illuminate\Support\ServiceProvider;
 class LaraHperServiceProvider extends ServiceProvider
 {
 
+    // 路由中间件注册
     protected $routeMiddleware = [
         'wechat.oauth' => \Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate::class,
         'wechat.mock' => Middleware\MockWechatOAuth::class,
         'proxy.wechat.oauth' => Middleware\ProxyWechatOAuth::class,
     ];
 
+    // 命令注册
     protected $commands = [
         Console\Commands\AdminCommand::class,
         Console\Commands\PublishCommand::class,

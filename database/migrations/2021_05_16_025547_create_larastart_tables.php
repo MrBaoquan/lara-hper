@@ -20,13 +20,15 @@ class CreateLarastartTables extends Migration
             // 用户名登录 用户名
             $table->string('username', 190)->unique();
             $table->string('password', 60);
-            $table->string('name');
-            $table->string('avatar')->nullable();
-            $table->string('remember_token', 100)->nullable();
-
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             // 手机号登录
             $table->string('phone', 255)->unique(); // 手机号
             $table->string('openid', 255)->unique(); // openid
+            $table->rememberToken();
+
+            $table->string('name');
+            $table->string('avatar')->nullable();
             $table->integer('gender')->default(0); // 性别
             $table->string('country', 20)->nullable(); // 国家
             $table->string('province', 20)->nullable(); // 省份

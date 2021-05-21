@@ -50,7 +50,7 @@ class InstallCommand extends Command
         $userModel = config('larahper.database.users_model');
 
         if ($userModel::count() == 0) {
-            $this->call('db:seed', ['--class' => \Mrba\LaraHper\Database\Seeders\LaraStartSeeder::class]);
+            $this->call('db:seed', ['--class' => \Mrba\LaraHper\Database\Seeders\LaraHperSeeder::class]);
         }
         return 0;
     }

@@ -31,7 +31,7 @@ class PublishCommand extends Command
     }
 
     protected $publishes = [
-        \Mrba\LaraHper\LaraStartServiceProvider::class,
+        \Mrba\LaraHper\LaraHperServiceProvider::class,
         \Encore\Admin\AdminServiceProvider::class,
         \Laravel\Sanctum\SanctumServiceProvider::class,
         \Overtrue\LaravelWeChat\ServiceProvider::class,

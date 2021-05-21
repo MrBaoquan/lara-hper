@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Mrba\LaraHper\Controllers\ApiResponse\APIErrorCode;
-use Mrba\LaraHper\Models\WXUser as User;
+use Mrba\LaraHper\Models\User;
 
 class AuthController extends APIController
 {
