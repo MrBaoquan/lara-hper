@@ -1,6 +1,28 @@
 <?php
 
+use Mrba\LaraHper\Models\User;
+
 return [
+
+    'auth' => [
+
+        'guard' => 'larahper',
+
+        'guards' => [
+            'larahper' => [
+                'driver' => 'sanctum',
+                'provider' => 'larahper',
+            ],
+        ],
+
+        'providers' => [
+            'larahper' => [
+                'driver' => 'eloquent',
+                'model' => \Mrba\LaraHper\Models\User::class,
+            ],
+        ],
+
+    ],
 
     "database" => [
         // Database connection for following tables.
@@ -10,19 +32,8 @@ return [
         'users_table' => 'larahper_users',
         'users_model' => Mrba\LaraHper\Models\User::class,
 
-        // Role table and model.
-        'roles_table' => 'larahper_roles',
-        //'roles_model' => Encore\Admin\Auth\Database\Role::class,
-
-        // Permission table and model.
-        'permissions_table' => 'larahper_permissions',
-        // 'permissions_model' => Encore\Admin\Auth\Database\Permission::class,
-
         // Pivot table for table above.
         'operation_log_table' => 'larahper_operation_log',
-        'user_permissions_table' => 'larahper_user_permissions',
-        'role_users_table' => 'larahper_role_users',
-        'role_permissions_table' => 'larahper_role_permissions',
     ],
 
     // 微信模拟授权

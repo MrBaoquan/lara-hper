@@ -16,6 +16,6 @@ class LaraHper extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return "LaraHper";
+        return \Mrba\LaraHper\LaraHper::class;
     }
 }

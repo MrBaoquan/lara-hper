@@ -39,46 +39,46 @@ class CreateLarastartTables extends Migration
         });
 
         // 角色表
-        Schema::create(config('larahper.database.roles_table'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 50)->unique();
-            $table->string('slug', 50)->unique();
-            $table->timestamps();
-        });
+        // Schema::create(config('larahper.database.roles_table'), function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('name', 50)->unique();
+        //     $table->string('slug', 50)->unique();
+        //     $table->timestamps();
+        // });
 
-        // 权限表
-        Schema::create(config('larahper.database.permissions_table'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 50)->unique();
-            $table->string('slug', 50)->unique();
-            $table->string('http_method')->nullable();
-            $table->text('http_path')->nullable();
-            $table->timestamps();
-        });
+        // // 权限表
+        // Schema::create(config('larahper.database.permissions_table'), function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('name', 50)->unique();
+        //     $table->string('slug', 50)->unique();
+        //     $table->string('http_method')->nullable();
+        //     $table->text('http_path')->nullable();
+        //     $table->timestamps();
+        // });
 
-        // 角色<=>用户 表
-        Schema::create(config('larahper.database.role_users_table'), function (Blueprint $table) {
-            $table->integer('role_id');
-            $table->integer('user_id');
-            $table->index(['role_id', 'user_id']);
-            $table->timestamps();
-        });
+        // // 角色<=>用户 表
+        // Schema::create(config('larahper.database.role_users_table'), function (Blueprint $table) {
+        //     $table->integer('role_id');
+        //     $table->integer('user_id');
+        //     $table->index(['role_id', 'user_id']);
+        //     $table->timestamps();
+        // });
 
-        // 角色<=>权限
-        Schema::create(config('larahper.database.role_permissions_table'), function (Blueprint $table) {
-            $table->integer('role_id');
-            $table->integer('permission_id');
-            $table->index(['role_id', 'permission_id']);
-            $table->timestamps();
-        });
+        // // 角色<=>权限
+        // Schema::create(config('larahper.database.role_permissions_table'), function (Blueprint $table) {
+        //     $table->integer('role_id');
+        //     $table->integer('permission_id');
+        //     $table->index(['role_id', 'permission_id']);
+        //     $table->timestamps();
+        // });
 
-        // 用户<=>权限
-        Schema::create(config('larahper.database.user_permissions_table'), function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('permission_id');
-            $table->index(['user_id', 'permission_id']);
-            $table->timestamps();
-        });
+        // // 用户<=>权限
+        // Schema::create(config('larahper.database.user_permissions_table'), function (Blueprint $table) {
+        //     $table->integer('user_id');
+        //     $table->integer('permission_id');
+        //     $table->index(['user_id', 'permission_id']);
+        //     $table->timestamps();
+        // });
 
         // 操作日志
         Schema::create(config('larahper.database.operation_log_table'), function (Blueprint $table) {
@@ -102,11 +102,11 @@ class CreateLarastartTables extends Migration
     public function down()
     {
         Schema::dropIfExists(config('larahper.database.users_table'));
-        Schema::dropIfExists(config('larahper.database.roles_table'));
-        Schema::dropIfExists(config('larahper.database.permissions_table'));
-        Schema::dropIfExists(config('larahper.database.user_permissions_table'));
-        Schema::dropIfExists(config('larahper.database.role_users_table'));
-        Schema::dropIfExists(config('larahper.database.role_permissions_table'));
+        // Schema::dropIfExists(config('larahper.database.roles_table'));
+        // Schema::dropIfExists(config('larahper.database.permissions_table'));
+        // Schema::dropIfExists(config('larahper.database.user_permissions_table'));
+        // Schema::dropIfExists(config('larahper.database.role_users_table'));
+        // Schema::dropIfExists(config('larahper.database.role_permissions_table'));
 
         Schema::dropIfExists(config('larahper.database.operation_log_table'));
 

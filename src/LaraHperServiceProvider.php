@@ -2,6 +2,7 @@
 
 namespace Mrba\LaraHper;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 
 class LaraHperServiceProvider extends ServiceProvider
@@ -29,6 +30,7 @@ class LaraHperServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->loadLarahperAuthConfig();
         $this->commands($this->commands);
         $this->registerMiddleware();
 
@@ -36,6 +38,11 @@ class LaraHperServiceProvider extends ServiceProvider
             return new \Mrba\LaraHper\LaraHper();
         });
 
+    }
+
+    protected function loadLarahperAuthConfig()
+    {
+        config(Arr::dot(config('larahper.auth', []), 'auth.'));
     }
 
     /**

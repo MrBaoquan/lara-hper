@@ -27,7 +27,7 @@ Route::post('api/login', [AuthController::class, 'login']);
  */
 Route::post('api/register', [AuthController::class, 'register']);
 
-Route::group(['prefix' => 'api', 'middleware' => ['api', 'auth:sanctum']], function () {
+Route::group(['prefix' => 'api', 'middleware' => ['api', 'auth:larahper']], function () {
     Route::any('/wx/jssdk', [WXController::class, 'JSSDK']);
 
     // example: 当前已认证用户信息

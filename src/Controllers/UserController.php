@@ -4,14 +4,14 @@ namespace Mrba\LaraHper\Controllers;
 
 use Illuminate\Http\Request;
 use Mrba\LaraHper\Facades\LaraHper;
-use Mrba\LaraHper\Resources\User;
 
 class UserController extends APIController
 {
     // 当前用户信息
     public function userinfo()
     {
-        return $this->responseJson(LaraHper::user());
+        $user = LaraHper::user();
+        return $this->responseJson($user);
     }
 
     public function updateUserInfo(Request $request)
