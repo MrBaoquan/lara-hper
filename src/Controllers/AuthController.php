@@ -73,7 +73,7 @@ class AuthController extends APIController
         if (!isset($user)) {
             Arr::set($input, 'avatar_url', Arr::get($input, 'headimageurl'));
             Arr::set($input, 'email', $openid . '@example.com');
-            Arr::set($input, 'name', Arr::get($input, 'nick_name'));
+            Arr::set($input, 'name', Arr::get($input, 'nickname'));
             $user = $this->createUser($input);
         }
 
