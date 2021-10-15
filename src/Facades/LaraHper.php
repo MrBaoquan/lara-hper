@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method static \MrBa\LaraHper\Models\User Administrator()
  * @method static \MrBa\LaraHper\Models\User user()
+ * @method static integer userid()
  *
  * @see \MrBa\LaraHper\LaraHper
  */
