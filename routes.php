@@ -9,9 +9,13 @@ Route::get('/clearsession', function () {
     session()->forget('wechat.oauth_user.default');
 });
 
+Route::get('/larahper', function () {
+    return 'larahper-env';
+});
+
 // 开启微信oauth授权登录代理
 Route::group(['middleware' => ['web',
-    config('larahper.wechat_mock') ? 'wechat.mock' : 'wechat.oauth',
+    config('larahper.wechat_mock') ? 'wechat.mock' : 'wechat.oauth:default,snsapi_userinfo',
 ]], function () {
     Route::any('/auth/wxmp', [AuthController::class, 'wechat']);
 });
